@@ -1,0 +1,75 @@
+$(document).ready(function(){
+
+
+
+    //FUNCTIONS JUD
+
+    var getID = null
+
+
+    //new note
+    $(".Post").click(function(){
+        let obj = {id:getID, note:$(".input").val()}
+
+        $.ajax({
+            url: "http://hyeumine.com/newnote.php",
+            method: "Post",
+            data: obj,
+            success: (data)=>{
+                alert("Posted!")
+            }
+        })
+    })
+
+    //new user
+    $(".Enter").click(function(){
+        let obj = {firstname:$(".fName").val(), lastname:$(".lName").val()}
+        
+        $.ajax({
+            url: "http://hyeumine.com/newuser.php",
+            method: "Post",
+            data: obj,
+            success: (data)=>{
+
+                let temp = JSON.parse(data)
+                getID = temp.id
+                console.log(getID)
+                $(`<div>Welcome <span style="color:#4285F4;">${temp.firstname}</span>!</div>`).appendTo(".welcome")
+                $(".outer-1").toggleClass("hide");
+            }
+        })
+    })
+
+    //print all notes
+    $(".Note").click(function(){
+        let obj = {id:getID}
+
+        $.ajax({
+            url: "http://hyeumine.com/mynotes.php",
+            method: "Get",
+            data: obj,
+            success: (data)=>{
+                let temp = JSON.parse(data)
+                $(".allNotes").html(" ")
+
+                for(let Note of temp.notes){
+                    console.log(Note)
+                    $(`<div><div class = "time">${Note[1]}</div><div class = "notes">${Note[0]}</div></div>`).appendTo(".allNotes")
+                }
+
+            }
+        })
+    })
+
+    $(".newUser").click(function(){
+        $(".welcome").html(" ")
+        $(".allNotes").html(" ")
+        $(".outer-1").toggleClass("hide");
+    })
+    
+
+
+
+
+
+ });

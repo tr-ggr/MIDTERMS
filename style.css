@@ -1,0 +1,111 @@
+.outer-1{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    background-color: #fdfdfd;
+}
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login > input[type="text"]{
+    width: 100%;
+    padding: 10px;
+}
+
+.Login > button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.outer-2{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdfdfd;
+    gap: 5em;
+}
+
+.hide{
+    display: none;
+}
+
+.input{
+    width: 100%;
+    height: 100px;
+}
+
+.Postings{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F6CF;~
+    padding: 10px;
+    border-radius: 10px;
+    filter: drop-shadow(0px 10px 10px);
+}
+
+.Postings > button{
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.allNotes{
+    width: 500px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.allNotes > div{
+    width: 500px;
+    border: solid 1px black;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fdfdfd;
+    filter: drop-shadow(0px 5px 5px);
+}
+
+.time{
+    font-size: larger;
+    font-weight: bold;
+}
+
+.notes{
+    font-size: 15px;
+    float:left;
+}
+
+.welcome{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
